@@ -10,6 +10,19 @@ body {
     flex-direction: column;
 }
 
+.btn {
+    padding: 16px;
+    width: 250px;
+    align-self: center;
+    margin-top: 8px;
+    border-radius: 8px;
+    background-color: #f1a470;
+    font-weight: 700;
+    border: 2px solid black;
+    box-shadow: 0 8px 8px -4px black;
+
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -22,13 +35,14 @@ body {
 
 .square {
     display: flex;
-    background-color: #7aecd4;
-    width: 100px;
+    background-color: lightblue;
+    max-width: 100px;
+    text-align: center;
 }
 
 
 
 .square:hover {
-    background-color: rgb(241, 172, 82);
+    background-color: #f1a470;
     transform:translateY(-10px);
 }
