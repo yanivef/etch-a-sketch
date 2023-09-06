@@ -1,19 +1,26 @@
 const container = document.querySelector('.container')
 const btn = document.querySelector('.btn')
-const divs = document.querySelectorAll('.container div')
 
 
-
-
-divs.forEach(div => { 
-    div.addEventListener('mouseover', e => {
-        e.target.classList.add('square:hover')
-    })
-})
-
+let divs;
 btn.addEventListener('click', () => {
-    createGrid(+prompt('Enter grid size: '))
+    divs = createGrid(+prompt('Enter grid size: '))
+    divHover(divs)
+    
 })
+
+
+function divHover(items) {
+    items.forEach(item => {
+        item.addEventListener('mouseover', e => {
+            e.target.classList.add('square:hover')
+            e.target.style.backgroundColor = 'black'
+            e.target.style.border = 'solid white 2px'
+        })
+    })
+}
+
+
 
 
 function createGrid(size) {
@@ -31,9 +38,10 @@ function createGrid(size) {
     for(let i = 0; i < size; i++){
         for(let j = 0; j < size; j++){
             let div = document.createElement('div')
-            div.textContent = `DIV BOX: ${i} : ${j}`
+            div.innerHTML = ''      
             div.classList.add('square')
             container.appendChild(div)
         }
     }
+    return document.querySelectorAll('.container div')
 }
